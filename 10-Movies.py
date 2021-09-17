@@ -208,20 +208,19 @@ def search_movie_by_country():
         else:
             countries = list(countries)
 
-            for i in range(len(movies)):
-                if movies[i][4] == countries[selected_country - 1]:
-                    print('"' + movies[i][0] + '"')
-                    print("\t\tYear     - ", movies[i][1])
-                    print("\t\tLength   - ", movies[i][2])
+            for movie in range(len(movies)):
+                if movies[movie][4] == countries[selected_country - 1]:
+                    print('"' + movies[movie][0] + '"')
+                    print("\t\tYear     - ", movies[movie][1])
+                    print("\t\tLength   - ", movies[movie][2])
                     # print("\t\tGenre    - ", movies[i][3])
                     print("\t\tGenre    -  ", end = "")
-                    print(len([movies[i][3]]))
 
-                    # if len([*movies[i][3]]) > 1:         # Jeśli film ma więcej niż 1 gatunek:
-                    #     print(*movies[i][3], sep = ", ") # to drukuj w jednej linii, gatunki z zagnieżdżonej listy oddzielone ,
-                    # else:                                # Jeśli film ma tylko jeden gatunek:
-                    #     print(*movies[i][3], sep = "")   #mo to drukuj ten gatunek bez seraparorów (żeby uniknąć 'h o r r o r')
-                    print("\t\tCountry  - ", movies[i][4])
+                    if type(movies[movie][3]) is list != True:      
+                        print(*movies[movie][3], sep = ", ") 
+                    else:                             
+                        print(*movies[movie][3], sep = "")  
+                    print("\t\tCountry  - ", movies[movie][4])
                     print()
                 else:
                     continue
