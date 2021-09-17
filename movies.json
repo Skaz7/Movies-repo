@@ -1,0 +1,229 @@
+[
+    [
+        "Alien",
+        1979,
+        117,
+        "Science Fiction",
+        "USA"
+    ],
+    [
+        "Aliens",
+        1986,
+        137,
+        [
+            "Action",
+            "Science Fiction"
+        ],
+        "USA"
+    ],
+    [
+        "Avatar",
+        2009,
+        162,
+        "Science Fiction",
+        "USA"
+    ],
+    [
+        "Das Boot",
+        1981,
+        149,
+        [
+            "Drama",
+            "War"
+        ],
+        "Germany"
+    ],
+    [
+        "Dekalog V",
+        1989,
+        60,
+        "Drama",
+        "Poland"
+    ],
+    [
+        "Die Hard",
+        1988,
+        132,
+        "Action",
+        "USA"
+    ],
+    [
+        "Die Hard 2",
+        1990,
+        124,
+        [
+            "Action",
+            "Thriller"
+        ],
+        "USA"
+    ],
+    [
+        "Die Hard: With A Vengeance",
+        1995,
+        128,
+        [
+            "Action",
+            "Thriller"
+        ],
+        "USA"
+    ],
+    [
+        "Forest Gump",
+        1994,
+        142,
+        "Drama",
+        "USA"
+    ],
+    [
+        "Godzilla",
+        1954,
+        207,
+        "Science Fiction",
+        "Japan"
+    ],
+    [
+        "Indiana Jones and the Last Crusade",
+        1989,
+        127,
+        [
+            "Action",
+            "Adventure"
+        ],
+        "USA"
+    ],
+    [
+        "Indiana Jones and the Temple of Doom",
+        1984,
+        118,
+        [
+            "Action",
+            "Adventure"
+        ],
+        "USA"
+    ],
+    [
+        "Intouchables",
+        2011,
+        112,
+        "Comedy",
+        "France"
+    ],
+    [
+        "Jak Rozp\u0119ta\u0142em II Wojn\u0119 \u015awiatow\u0105",
+        1970,
+        236,
+        "Comedy",
+        "Poland"
+    ],
+    [
+        "Kill Bill vol. 1",
+        2003,
+        111,
+        [
+            "Action",
+            "Thriller"
+        ],
+        "USA"
+    ],
+    [
+        "Lawrence of Arabia",
+        1962,
+        222,
+        "Drama",
+        "Great Britain"
+    ],
+    [
+        "Leon",
+        1994,
+        110,
+        "Action",
+        "France"
+    ],
+    [
+        "Life of Brian",
+        1979,
+        94,
+        "Comedy",
+        "Great Britain"
+    ],
+    [
+        "Lola rennt",
+        1998,
+        81,
+        "Action",
+        "Germany"
+    ],
+    [
+        "Monty Python and the Holy Grail",
+        1975,
+        91,
+        "Comedy",
+        "Great Britain"
+    ],
+    [
+        "M\u00e4n som hatar kvinnor",
+        2009,
+        186,
+        "Thriller",
+        "Sweden"
+    ],
+    [
+        "Pulp Fiction",
+        1994,
+        154,
+        [
+            "Action",
+            "Comedy"
+        ],
+        "USA"
+    ],
+    [
+        "Raiders of the Lost Ark",
+        1981,
+        115,
+        "Adventure",
+        "USA"
+    ],
+    [
+        "Seven Samurai",
+        1954,
+        207,
+        "Drama",
+        "Japan"
+    ],
+    [
+        "The Exorcist",
+        1973,
+        98,
+        "Horror",
+        "USA"
+    ],
+    [
+        "The Lord of the Rings: The Fellowship of the Ring",
+        2001,
+        178,
+        "Fantasy",
+        "USA"
+    ],
+    [
+        "The Lord of the Rings: The Return of the King",
+        2003,
+        201,
+        "Fantasy",
+        "USA"
+    ],
+    [
+        "The Lord of the Rings: The Two Towers",
+        2002,
+        179,
+        "Fantasy",
+        "USA"
+    ],
+    [
+        "Titanic",
+        1997,
+        194,
+        "Romance",
+        "USA"
+    ]
+]
