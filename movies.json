@@ -1,5 +1,15 @@
 [
     [
+        "9 Rota",
+        2005,
+        140,
+        [
+            "Action",
+            "War"
+        ],
+        "Russia"
+    ],
+    [
         "Alien",
         1979,
         117,
@@ -15,6 +25,16 @@
             "Science Fiction"
         ],
         "USA"
+    ],
+    [
+        "Autumn Sonata (H\u00f6stsonaten)",
+        1978,
+        99,
+        [
+            "Drama",
+            "Musical"
+        ],
+        "Sweden"
     ],
     [
         "Avatar",
@@ -68,6 +88,16 @@
         "USA"
     ],
     [
+        "El Guardi\u00e1n Invisible",
+        2017,
+        129,
+        [
+            "Action",
+            "Mystery"
+        ],
+        "Spain"
+    ],
+    [
         "Forest Gump",
         1994,
         142,
@@ -102,6 +132,16 @@
         "USA"
     ],
     [
+        "Insomnia",
+        1997,
+        96,
+        [
+            "Thriller",
+            "Drama"
+        ],
+        "Norway"
+    ],
+    [
         "Intouchables",
         2011,
         112,
@@ -114,6 +154,15 @@
         236,
         "Comedy",
         "Poland"
+    ],
+    [
+        "Ju-On: The Grudge",
+        2003,
+        92,
+        [
+            "Horror"
+        ],
+        "Japan"
     ],
     [
         "Kill Bill vol. 1",
@@ -133,10 +182,50 @@
         "Great Britain"
     ],
     [
+        "Le Grand Bleu",
+        1988,
+        132,
+        [
+            "Adventure",
+            "Drama"
+        ],
+        "France"
+    ],
+    [
+        "Legado En Los Huesos",
+        2019,
+        119,
+        [
+            "Action",
+            "Mystery"
+        ],
+        "Spain"
+    ],
+    [
         "Leon",
         1994,
         110,
         "Action",
+        "France"
+    ],
+    [
+        "Les Rivi\u00e8res Pourpres",
+        2000,
+        106,
+        [
+            "Thriller",
+            "Mystery"
+        ],
+        "France"
+    ],
+    [
+        "Les Rivi\u00e8res Pourpres Ii - Les Anges De L'Apocalypse",
+        2004,
+        100,
+        [
+            "Thriller",
+            "Mystery"
+        ],
         "France"
     ],
     [
@@ -168,6 +257,36 @@
         "Sweden"
     ],
     [
+        "Ofrenda A La Tormenta",
+        2020,
+        139,
+        [
+            "Action",
+            "Mystery"
+        ],
+        "Spain"
+    ],
+    [
+        "Persona",
+        1966,
+        85,
+        [
+            "Drama",
+            "Mystery"
+        ],
+        "Sweden"
+    ],
+    [
+        "Princess Mononoke (Mononoke-Hime)",
+        1997,
+        133,
+        [
+            "Anime",
+            "Adventure"
+        ],
+        "Japan"
+    ],
+    [
         "Pulp Fiction",
         1994,
         154,
@@ -185,10 +304,32 @@
         "USA"
     ],
     [
-        "Seven Samurai",
+        "Rec",
+        2007,
+        78,
+        [
+            "Horror",
+            "Thriller"
+        ],
+        "Spain"
+    ],
+    [
+        "Seven Samurai (Shichinin No Samurai)",
         1954,
         207,
-        "Drama",
+        [
+            "Drama"
+        ],
+        "Japan"
+    ],
+    [
+        "Spirited Away (Sen To Chihiro No Kamikakushi)",
+        2001,
+        125,
+        [
+            "Anime",
+            "Family"
+        ],
         "Japan"
     ],
     [
@@ -255,5 +396,25 @@
         194,
         "Romance",
         "USA"
+    ],
+    [
+        "Utomlyonnye Solntsem",
+        1994,
+        152,
+        [
+            "Drama",
+            "War"
+        ],
+        "Russia"
+    ],
+    [
+        "Vicky Cristina Barcelona",
+        2008,
+        96,
+        [
+            "Romance",
+            "Drama"
+        ],
+        "Spain"
     ]
 ]
