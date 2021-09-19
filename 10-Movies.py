@@ -1,7 +1,7 @@
 import os
 import json
 from datetime import date
-import string
+import time
 
 choice = -1 # Deklaracja opcji wybór
 movies = [] # Tworzenie pustej listy filmów
@@ -89,12 +89,12 @@ def search_movie():
     print("3 - Search by Genre")
     print("4 - Search by Country")
 
-    while search_movie_choice != 0:
+    if search_movie_choice != 0:
         try: 
             search_movie_choice = int(input("\n0 - BACK \n\nSearch movies by: "))
             if search_movie_choice < 0 or search_movie_choice > 4:
                 print("\nWrong option, choose again.\n")
-                continue
+                return
             elif search_movie_choice == 1:
                 search_movie_by_title()
 
@@ -108,74 +108,94 @@ def search_movie():
                 search_movie_by_country()
                 
         except ValueError:
-            print("\nWrong option, choose again.\n")
-        continue
-    return
+            print("-" * 33)
+            print("\n|  Wrong option, choose again.  |\n")
+            print("-" * 33)
+            return
+    if search_movie_choice == 0:
+        main_screen()
 
 #########################################################################
 # Wyświetlanie filmu wg wpisanego tytułu
 
 def search_movie_by_title():
 
-    searched_movie = input("Movie title: ").lower()
-    if searched_movie == "0":
-        search_movie()
-    else:
-        result = [movie for movie in movies if searched_movie in movie[0].lower()]
+    while True:
 
-        if result == []:
-            print('Movie "' + searched_movie + '" not found')
+        searched_movie = input("Movie title: ").lower()
+
+        if searched_movie == "0":
+            search_movie()
         else:
-            for title in result:
-                print('\n"' + title[0] + '":')
-                print("\t\t Year    -", title[1])
-                print("\t\t Length  -", title[2], 'min')
-                print("\t\t Genre   - ", end = "") 
+            result = [movie for movie in movies if searched_movie in movie[0].lower()]
 
-                if len(title[3][0]) > 1:         # Jeśli film ma więcej niż 1 gatunek:
-                    print(*title[3], sep = ", ") # to drukuj w jednej linii, gatunki z zagnieżdżonej listy oddzielone ,
-                else:                                # Jeśli film ma tylko jeden gatunek:
-                    print(*title[3], sep = "")   # to drukuj ten gatunek bez seraparorów (żeby uniknąć 'h o r r o r')
+            if result == []:
+                print("-" * (24 + len(searched_movie)))
+                print('|  Movie "' + searched_movie + '" not found  |')
+                print("-" * (24 + len(searched_movie)))
+                time.sleep(2)
+                search_movie()
+            else:
+                for title in result:
+                    print('\n"' + title[0] + '":')
+                    print("\t\t Year    -", title[1])
+                    print("\t\t Length  -", title[2], 'min')
+                    print("\t\t Genre   - ", end = "") 
 
-                print("\t\t", "Country -", title[4])
-                print()
-                continue
+                    if len(title[3][0]) > 1:         # Jeśli film ma więcej niż 1 gatunek:
+                        print(*title[3], sep = ", ") # to drukuj w jednej linii, gatunki z zagnieżdżonej listy oddzielone ,
+                    else:                                # Jeśli film ma tylko jeden gatunek:
+                        print(*title[3], sep = "")   # to drukuj ten gatunek bez seraparorów (żeby uniknąć 'h o r r o r')
+
+                    print("\t\t", "Country -", title[4])
+                    print()
+                    continue
 
 #########################################################################
 # Wyświetlanie filmu wg roku
 
 def search_movie_by_year():
+
+    searched_year = -1
+
     while True:
-        try:
-            searched_year = int(input("Enter year of movie you want to find: "))
-            if searched_year == 0:
-                search_movie()
-            elif searched_year < 1895 or searched_year > current_year: 
-                print("Year must be between 1895 and current year")
+        if searched_year != 0:
+            try:
+                searched_year = int(input("\nEnter year of movie you want to find: "))
+                if searched_year < 1895 or searched_year > current_year: 
+                    print("\nYear must be between 1895 and current year.\n")
+                    continue
+            except ValueError:
+                print()
+                print("-" *22)
+                print("| Wrong year format! |")
+                print("-" *22, "\n")
                 continue
-        except ValueError:
-            print("Wrong year format!")
-            continue
-        else:
-            result = [movie for movie in movies if searched_year == movie[1]]
-
-            if result == []:
-                print('Year', searched_year, 'not found')
             else:
-                for year in result:
-                    print('\n"' + year[0] + '":')
-                    print("\t\t Year    -", year[1])
-                    print("\t\t Length  -", year[2], 'min')
-                    print("\t\t Genre   - ", end = "") 
+                result = [movie for movie in movies if searched_year == movie[1]]
 
-                    if len(year[3][0]) > 1:         # Jeśli film ma więcej niż 1 gatunek:
-                        print(*year[3], sep = ", ") # to drukuj w jednej linii, gatunki z zagnieżdżonej listy oddzielone ,
-                    else:                                # Jeśli film ma tylko jeden gatunek:
-                        print(*year[3], sep = "")   # to drukuj ten gatunek bez seraparorów (żeby uniknąć 'h o r r o r')
-
-                    print("\t\t", "Country -", year[4])
+                if result == []:
                     print()
-                    return
+                    print("-" * 23)
+                    print('| Year', searched_year, 'not found |')
+                    print("-" * 23, "\n")
+                else:
+                    for year in result:
+                        print('\n"' + year[0] + '":')
+                        print("\t\t Year    -", year[1])
+                        print("\t\t Length  -", year[2], 'min')
+                        print("\t\t Genre   - ", end = "") 
+
+                        if len(year[3][0]) > 1:         # Jeśli film ma więcej niż 1 gatunek:
+                            print(*year[3], sep = ", ") # to drukuj w jednej linii, gatunki z zagnieżdżonej listy oddzielone ,
+                        else:                                # Jeśli film ma tylko jeden gatunek:
+                            print(*year[3], sep = "")   # to drukuj ten gatunek bez seraparorów (żeby uniknąć 'h o r r o r')
+
+                        print("\t\t", "Country -", year[4])
+                        print()
+                continue
+        else:
+            search_movie()
 
 
 #########################################################################
@@ -191,36 +211,37 @@ def search_movie_by_genre():
     print("\n0 - BACK")
 
     while True:
-        try:
-            selected_genre = int(input("Which genre to find? : "))
-        except ValueError:
-            print("Wrong format!")
-        if selected_genre == 0:
-            search_movie()
-        elif selected_genre < 0 or selected_genre > len(genres):
-            print("Wrong number!")
-            continue
-        else:
-            selected_genre = genres[selected_genre - 1]
-            print(selected_genre)
-            for movie in range(len(movies)):
-                # if type(movies[movie][3]) is list == True:
-                    
-                # if selected_genre == movies[movie][3]:
-                if selected_genre in movies[movie][3]:
-                    print('"' + movies[movie][0] + '"')
-                    print("\t\tYear     - ", movies[movie][1])
-                    print("\t\tLength   - ", movies[movie][2])
-                    print("\t\tGenre    -  ", end = "")
 
-                    if type(movies[movie][3]) is list != True:      
-                        print(*movies[movie][3], sep = ", ") 
-                    else:                             
-                        print(*movies[movie][3], sep = "")  
-                    print("\t\tCountry  - ", movies[movie][4])
-                    print()
-                    # print(movies[movie])
-  
+        selected_genre = -1
+
+        try:
+            selected_genre = int(input("\nWhich genre to find? : "))
+
+            if selected_genre == 0:
+                search_movie()
+            elif selected_genre < 0 or selected_genre > len(genres):
+                print("\nWrong number!\n")
+                continue
+            else:
+                selected_genre = genres[selected_genre - 1]
+                print("\n\n", selected_genre.capitalize(), "movies:\n")
+                for movie in range(len(movies)):
+                    if selected_genre in movies[movie][3]:
+                        print('"' + movies[movie][0] + '"')
+                        print("\t\tYear     - ", movies[movie][1])
+                        print("\t\tLength   - ", movies[movie][2])
+                        print("\t\tGenre    -  ", end = "")
+
+                        if type(movies[movie][3]) is list != True:      
+                            print(*movies[movie][3], sep = ", ") 
+                        else:                             
+                            print(*movies[movie][3], sep = "")  
+                        print("\t\tCountry  - ", movies[movie][4])
+                        print()
+                        
+        except ValueError:
+            print("\nWrong format!")
+
 #########################################################################
 # Wyświetlanie filmu wg kraju
 
@@ -539,13 +560,15 @@ def delete_genre():
         return
 
 #########################################################################
-# Wczytanie danych z pliku
+# Zapisanie filmów do pliku
 
-with open("movies.json") as file:
-    movies = json.load(file)        # Wczytanie listy filmów
+def save_list_to_file():
 
-with open("genres.json") as file:
-    genres = json.load(file)        # Wczytanie listy gatunków
+    with open("movies.json", "w") as file:
+        json.dump(movies, file, indent = 4)
+      
+    with open("genres.json", "w") as file:
+        json.dump(genres, file, indent = 4)
 
 #########################################################################
 # Wyjście z programu z zapisaniem zmian do pliku
@@ -570,20 +593,7 @@ def exit_program():
             continue
 
 #########################################################################
-# Zapisanie filmów do pliku
-
-def save_list_to_file():
-
-    with open("movies.json", "w") as file:
-        json.dump(movies, file, indent = 4)
-      
-    with open("genres.json", "w") as file:
-        json.dump(genres, file, indent = 4)
-
-        return
-
-#########################################################################
-# Główny program
+# Główne menu
 
 def main_screen():
 
@@ -615,14 +625,21 @@ def main_screen():
         print("\n\n1 - Movies list.")
         print("2 - Full info.")
         print("3 - Movie details by letter.")
-        print("4 - Find movie.")
+        print("4 - Search for a movie.")
         print("9 - Options.\n")
         print("0 - EXIT.\n")
 
         choice = input("What's your choice: ")
         print("\n\n")
 
+
 #########################################################################
 ## START ##
+
+with open("movies.json") as file:
+    movies = json.load(file)        # Wczytanie listy filmów
+
+with open("genres.json") as file:
+    genres = json.load(file)        # Wczytanie listy gatunków
 
 main_screen()

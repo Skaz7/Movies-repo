@@ -333,6 +333,16 @@
         "Japan"
     ],
     [
+        "Terminator 2: Judgment Day",
+        1991,
+        137,
+        [
+            "Science Fiction",
+            "Action"
+        ],
+        "USA"
+    ],
+    [
         "The Exorcist",
         1973,
         98,
@@ -384,6 +394,16 @@
         "The Matrix Revolutions",
         2003,
         129,
+        [
+            "Science Fiction",
+            "Action"
+        ],
+        "USA"
+    ],
+    [
+        "The Terminator",
+        1984,
+        107,
         [
             "Science Fiction",
             "Action"
